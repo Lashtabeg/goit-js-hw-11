@@ -52,6 +52,5 @@ export async function getImeges(searchQuery, page = 1) {
       per_page: 40,
     },
   });
-
   return result.data;
 }

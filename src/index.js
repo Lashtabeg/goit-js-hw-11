@@ -19,8 +19,6 @@ async function onSub(event) {
     const result = await getImeges(formValue);
     const markup = createMarkup(result);
     refs.gallary.innerHTML = markup;
-    totalPage = Math.ceil(result.total / 40);
-    checkPages();
     lightbox = new SimpleLightbox('.gallery a', {
       captionDelay: 333,
     });
@@ -41,6 +39,8 @@ async function onSub(event) {
       refs.loadBtn.style.display = 'block';
       Notify.success(`SHooray! We found ${result.totalHits} images.`);
     }
+    totalPage = Math.ceil(result.total / 40);
+    checkPages();
   } catch (error) {
     Notify.failure(`${error.message}`);
     refs.loadBtn.style.display = 'none';
