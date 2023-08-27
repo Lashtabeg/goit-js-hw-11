@@ -63,7 +63,7 @@ async function onLoadBtn() {
 }
 
 function checkPages() {
-  if (totalPage === page) {
+  if (totalPage === page || totalPage === 1) {
     refs.loadBtn.style.display = 'none';
     Notify.info(`We're sorry, but you've reached the end of search results.`);
   }
